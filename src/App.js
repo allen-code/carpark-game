@@ -20,14 +20,25 @@ class App extends Component
 
   handlePlaceCar(e)
   {
+    this.setState({
+      ...this.state,
+      position: {x: e.positionx, y:e.positiony},
+      face: e.face
+    })
   }
 
   handleMoveCar()
   {
+    let newState = Object.assign({}, this.state)
+    newState.position = moveInPark(this.state.face)(this.state.position)
+    this.setState(newState)
   }
 
   handleRotateCar(direction)
   {
+    let newState = Object.assign({}, this.state)
+    newState.face = rotateFace(direction)(this.state.face)
+    this.setState(newState)
   }
 
   render() 
