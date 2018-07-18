@@ -1,3 +1,5 @@
+import {AppConfig} from "../constants/config"
+
 /*
  * Function to determine the degree car is facing
  * 
@@ -11,15 +13,15 @@ export const placeFace = (face) => ({
     "WEST": 270
 })[face]
 
-
 /*
  * Function to calculate the degree car rotates
  * 
- * @param {string}
+ * @param {string, string}
  * @returns {string}
  */
-export const rotateFace = (direction) => (current) =>
+const keys = Object.keys(AppConfig.FACE)
+export const rotateFace = (rotate) => (face) =>
 ({
-    "LEFT": (current - 90),
-    "RIGHT": (current + 90)
-})[direction]
+    "LEFT": Object.keys(AppConfig.FACE).indexOf(face) === keys.length - 1 ? keys[0] : keys[Object.keys(AppConfig.FACE).indexOf(face) + 1],
+    "RIGHT": Object.keys(AppConfig.FACE).indexOf(face) === 0 ? keys[keys.length - 1] : keys[Object.keys(AppConfig.FACE).indexOf(face) - 1]
+})[rotate]

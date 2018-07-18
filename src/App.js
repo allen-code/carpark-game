@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Grid } from 'react-bootstrap'
-import { GridWrapper } from './containers'
+import { GridWrapper, ControllerWrapper } from './containers'
+import Grid from '@material-ui/core/Grid'
 import { AppConfig } from './constants/config'
+import { moveInPark, rotateFace, placeFace } from './utils'
 
 class App extends Component 
 {
@@ -12,6 +13,21 @@ class App extends Component
       position: {x: 0, y: 0},
       face: AppConfig.FACE.NORTH
     }
+    this.handlePlaceCar = this.handlePlaceCar.bind(this)
+    this.handleMoveCar = this.handleMoveCar.bind(this)
+    this.handleRotateCar = this.handleRotateCar.bind(this)
+  }
+
+  handlePlaceCar(e)
+  {
+  }
+
+  handleMoveCar()
+  {
+  }
+
+  handleRotateCar(direction)
+  {
   }
 
   render() 
@@ -19,8 +35,16 @@ class App extends Component
     return (
       <Grid>
         <GridWrapper 
-          face={this.state.face} 
+          direction={placeFace(this.state.face)} 
           position={this.state.position} />
+        <ControllerWrapper
+          position={this.state.position}
+          face={this.state.face}
+          placeCar={this.handlePlaceCar}
+          moveCar={this.handleMoveCar}
+          rotateCarLeft={() => this.handleRotateCar(AppConfig.LEFT)}
+          rotateCarRight={() => this.handleRotateCar(AppConfig.RIGHT)}
+        />
       </Grid>
     )
   }

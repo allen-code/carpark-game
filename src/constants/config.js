@@ -4,10 +4,12 @@ export class AppConfig
     static FACE = {
         NORTH: 'NORTH', 
         WEST: 'WEST', 
-        SOUTH: 'SOUTH', 
+        SOUTH: 'SOUTH',
         EAST: 'EAST'
     }
     static MOVE = 'MOVE'
     static LEFT = 'LEFT'
     static RIGHT = 'RIGHT'
+    static X_AXIS = 'X'
+    static Y_AXIS = 'Y'
 }

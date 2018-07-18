@@ -1,52 +1,51 @@
 import React, { Component } from 'react'
-import { Row, Col } from 'react-bootstrap'
-import { CarComponent } from '../components'
-import { GridComponent } from '../components'
+import Grid from '@material-ui/core/Grid'
+import { CarComponent, GridComponent } from '../components'
 
 class GridWrapper extends Component {
     render() {
         return (
-                <Row className="show-grid" md={8} sm={12}>
-                    <Col>
+                <Grid container>
+                    <Grid>
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
-                    </Col>
-                    <Col>
+                    </Grid>
+                    <Grid>
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
-                    </Col>
-                    <Col>
+                    </Grid>
+                    <Grid>
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
-                    </Col>
-                    <Col>
+                    </Grid>
+                    <Grid>
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
-                    </Col>
-                    <Col>
+                    </Grid>
+                    <Grid>
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
                         <GridComponent />
-                    </Col>
+                    </Grid>
                     <CarComponent 
-                        face={this.props.face} 
+                        direction={this.props.direction} 
                         position={this.props.position} 
                     />
-                </Row>
+                </Grid>
         )
     }
 }

@@ -1,13 +1,11 @@
 import React from 'react'
-import {placeFace} from '../utils'
 import {Car} from '../blocks'
 import carImage from '../assets/car.png'
 
 const CarComponent = (props) => {
-    const {face, position} = props
-    const carRotation = placeFace(face)
+    const {direction, position} = props
     return (
-        <Car rotation={carRotation} position={position}>
+        <Car rotation={direction} position={position}>
             <img src={carImage} />
         </Car>
     )
