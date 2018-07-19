@@ -28,7 +28,7 @@ class ControllerWrapper extends Component {
     }
     handleChange = event => 
     {
-        this.props.isPlaced ? this.setState({[event.target.name]: event.target.value}) : null
+        this.setState({[event.target.name]: event.target.value})
     }
     moveCar = () =>
     {
