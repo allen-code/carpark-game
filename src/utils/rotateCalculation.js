@@ -7,10 +7,10 @@ import {AppConfig} from "../constants/config"
  * @returns {string}
  */
 export const placeFace = (face) => ({
-    "NORTH": 0,
-    "EAST": 90,
-    "SOUTH": 180,
-    "WEST": 270
+    [AppConfig.FACE.NORTH]: 0,
+    [AppConfig.FACE.EAST]: 90,
+    [AppConfig.FACE.SOUTH]: 180,
+    [AppConfig.FACE.WEST]: 270
 })[face]
 
 /*
@@ -22,6 +22,6 @@ export const placeFace = (face) => ({
 const keys = Object.keys(AppConfig.FACE)
 export const rotateFace = (rotate) => (face) =>
 ({
-    "LEFT": Object.keys(AppConfig.FACE).indexOf(face) === keys.length - 1 ? keys[0] : keys[Object.keys(AppConfig.FACE).indexOf(face) + 1],
-    "RIGHT": Object.keys(AppConfig.FACE).indexOf(face) === 0 ? keys[keys.length - 1] : keys[Object.keys(AppConfig.FACE).indexOf(face) - 1]
+    [AppConfig.LEFT]: Object.keys(AppConfig.FACE).indexOf(face) === keys.length - 1 ? keys[0] : keys[Object.keys(AppConfig.FACE).indexOf(face) + 1],
+    [AppConfig.RIGHT]: Object.keys(AppConfig.FACE).indexOf(face) === 0 ? keys[keys.length - 1] : keys[Object.keys(AppConfig.FACE).indexOf(face) - 1]
 })[rotate]

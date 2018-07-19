@@ -10,6 +10,9 @@ export class AppConfig
     static MOVE = 'MOVE'
     static LEFT = 'LEFT'
     static RIGHT = 'RIGHT'
-    static X_AXIS = 'X'
-    static Y_AXIS = 'Y'
+    static REPORT = 'REPORT'
+    static X_AXIS = 'positionx'
+    static Y_AXIS = 'positiony'
+    static COL_ROW_NUMBER = 5
+    static OUTLINED = 'outlined'
 }

@@ -3,9 +3,7 @@ import {Grid} from '../blocks'
 
 const GridComponent = () => {
     return (
-        <Grid>
-            
-        </Grid>
+        <Grid />
     )
 }
 
